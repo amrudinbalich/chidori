@@ -1,0 +1,1 @@
+<button class="btn <?= $class ?? 'default' ?>"><?= $text ?? '' ?></button>

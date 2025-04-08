@@ -1,0 +1,18 @@
+{
+    "name": "amrudinbalic/chidori",
+    "autoload": {
+        "psr-4": {
+            "Chidori\\Foundation\\": "src/"
+        },
+        "files": [
+            "src/Core/helpers.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Amrudin Balić",
+            "email": "balicamrudin@gmail.com"
+        }
+    ],
+    "require": {}
+}
