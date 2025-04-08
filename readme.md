@@ -1,37 +1,44 @@
-⚡️ Chidori — Lightweight PHP starter kit with custom routing, autoloading, and DI foundation. No bloat. Just control.
+**⚡️ Chidori --- Feel the power of lightning ⚡️**
 
+## Chidori
+Chidori is a lightweight PHP framework designed for rapid development of web applications. Inspired by _**Symfony**_ and _**Laravel**_ - it is built with simplicity and performance in mind, making it an ideal choice for developers who want to create robust applications without the overhead of larger frameworks.
 
-General Schema:
+You want to start small? No problem **_Chidori_** is giving you freedom to start smaller and expand as you need. Feel free to add your own packages that integrates within our MVC structure.
 
+## 📁 Project Structure
+
+```aiignore
 my_proj/
 │
-├── public/                 # Public root - ulaz za sve requeste
-│   └── index.php           # Glavni entrypoint, kao kod svakog modernog frameworka
+├── public/                 # 🌐 Public root – entry point for all HTTP requests
+│   └── index.php           # Main entrypoint (like in all modern frameworks)
 │
-├── src/                    # Tvoj vlastiti kod (Composer autoload-ovan)
-│   ├── Core/               # Generalne helpers/util klase (App, Router, Session, Auth...)
-│   │   └── Router.php
-│   │   └── App.php
-│   │   └── Session.php
+├── src/                    # 🧠 Your custom PHP code (Composer autoloaded)
+│   ├── Core/               # General helpers and utility classes
+│   │   ├── Router.php
+│   │   ├── App.php
+│   │   ├── Session.php
 │   │   └── Auth.php
 │   │
-│   ├── Controllers/        # Kontroleri koji renderuju pageove ili API-je
+│   ├── Controllers/        # 🎯 Controllers – handle rendering pages or APIs
+│   │   ├── ApiController.php
 │   │   └── HomeController.php
-│   │   └── ProductController.php
 │   │
-│   ├── Models/             # Baza, ORM, entiteti
-│   │   └── User.php
-│   │   └── Product.php
-│   │
-│   └── Views/              # Blade-style ili plain PHP view-ovi
-│       ├── layout/
-│       ├── components/
-│       └── home.php
+│   ├── Models/             # 🗄️ Database models, ORM, and entities
+│       ├── User.php
+│       └── Product.php
 │
-├── routes/
-│   └── web.php             # Rute za web
+├── views/                  # 🖼️ Views (Blade-style or plain PHP)
+│   ├── layout/
+│   ├── components/
+│   └── home.php
 │
-├── vendor/                 # Composer vendor folder (3rd party libovi)
-├── composer.json           # Composer definicija + autoload
-├── .htaccess               # Rewrite za Apache (sve ide na /public/index.php)
-└── README.md
+├── routes/                 # 🛣️ Defined application routes
+│   └── web.php             # Web routes
+│
+├── vendor/                 # 📦 Composer vendor folder (3rd party libraries)
+├── composer.json           # 📝 Composer configuration and autoload definition
+├── .htaccess               # ⚙️ Apache rewrite config (everything routes to /public/index.php)
+└── README.md               # 📖 Project documentation
+
+```
