@@ -9,14 +9,19 @@ class Router {
         $this->routes['GET'][$uri] = $controller;
     }
 
-    public function dispatch(string $uri, string $method) {
-        if (isset($this->routes[$method][$uri]) && is_array($this->routes[$method][$uri])) {
-            [$controller, $method] = $this->routes[$method][$uri];
+    public function dispatch(string $uri, string $method): Response {
+        $targetUrl = $this->routes[$method][$uri];
 
-            (new $controller)->$method();
-        } else {
-            http_response_code(404);
-            echo "404 - Page Not Found";
+        if(!isset($targetUrl) && !is_array($targetUrl)) {
+            return new Response('Not found', 404);
         }
+
+        $result = container()->resolve($targetUrl);
+
+        if (!$result instanceof Response) {
+            $result = new Response($result);
+        }
+
+        return $result;
     }
 }
