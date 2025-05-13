@@ -4,10 +4,7 @@ namespace Chidori\Foundation\Controllers;
 
 class HomeController
 {
-    public function index() {
-        return view('home', [
-            'title' => 'Home',
-            'content' => 'Welcome to the home page!'
-        ]);
+    public function index(): string {
+        return twig()->render('home.html.twig');
     }
 }

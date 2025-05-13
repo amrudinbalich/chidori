@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    {# <------ CSS Files ------> #}
+{#    <link rel="stylesheet" href="{{ asset('css/app.css') }}">#}
+    {# <------ CSS Files ------> #}
+
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+
+    <title>{% block title %}Chidori{% endblock %}</title>
+</head>
+<body>
+    {# <------ Header Section ------> #}
+    {#    <header>#}
+    {#        <h1>Header Section</h1>#}
+    {#    </header>#}
+    {# <------ Header Section ------> #}
+
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    {# <------ Footer Section ------> #}
+    {#<footer>#}
+    {#    <p>Footer Section</p>#}
+    {#</footer>#}
+    {# <------ Footer Section ------> #}
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+{% extends 'layouts/master.html.twig' %}
+
+{% block content %}
+    <h2>Chidori</h2>
+    <p>Build your PHP websites with lightning speed ⚡</p>
+    <p>This is a starting template so feel free to get rid of it and start building your own.</p>
+
+    <div>
+        <h4>Framework features:</h4>
+
+        <div class="card-container">
+
+            <!-- Templating -->
+            <div class="card">
+                <h5>Templating</h5>
+
+                <div class="card-description">
+                    <p>Chidori offers freedom with templating, with <a href="https://twig.symfony.com/">Twig</a> as the default templating engine.</p>
+                    <p>You want to use Laravel Blade? It is completely up for you to choose, Chidori is going to adapt.</p>
+                </div>
+
+            </div>
+
+            <!-- UI -->
+            <div class="card">
+                <h5>UI & Styling</h5>
+
+                <div class="card-description">
+                    <p>Write your own CSS or choose one of the leading CSS libraries like:</p>
+                    <ul>
+                        <li><a href="https://tailwindcss.com/">Tailwind CSS</a></li>
+                        <li><a href="https://getbootstrap.com/">Bootstrap</a></li>
+                    </ul>
+                    <small>This page is made with Tailwind</small>
+                </div>
+
+            </div>
+
+            <!-- DI Container & Services Automatization -->
+            <div class="card">
+                <h5>DI Container & Services Automatization</h5>
+                <div class="card-description">
+                    <p>DI container is out of the box, it stores all the services, and it automatically resolves them <br> as the HTTP request-response lifecycle goes.</p>
+                </div>
+            </div>
+
+            <!-- Routing -->
+            <div class="card">
+                <h5>Routing</h5>
+                <div class="card-description">
+                    <p>Chidori offers a simple routing system, which is set to auto-resolve all requested dependencies for your controller methods as well the constructor.</p>
+                    <p>Feel free to inject parameters like <code>`/users/{id}`</code> OR <code>`/product/{uid}`</code> in order to make your routes dynamic and user & SEO friendly.</p>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+{% endblock %}

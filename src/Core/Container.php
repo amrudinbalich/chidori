@@ -17,10 +17,16 @@ class Container
 {
     private array $resolved = [];
 
+    private array $registered = [];
+
     public function get(string $service) {
 
         if(array_key_exists($service, $this->resolved)) {
             return $this->resolved[$service];
+        }
+
+        if(array_key_exists($service, $this->registered)) {
+            return $this->registered[$service]();
         }
 
         $resolvedService = $this->resolve($service);
@@ -52,6 +58,26 @@ class Container
         }
 
         throw new Exception("Unresolvable callable.");
+    }
+
+    /**
+     * Register a complex service/class into a container so it can be resolved when needed.
+     * You have a boilerplate constructor or setting-up process that you don't wish to have in your controller/service/ command or any other place?
+     * Registering a service gives you a chance to append a resolver callback to your service in the ` config / services.php ` file.
+     *
+     * Feel free to take a look at the mentioned file to see examples. It should be simple, and it is to: 1. register, 2. call get :)
+     *
+     * @param string $service classname
+     * @param callable $resolver
+     * @return void
+     */
+    public function register(string $service, callable $resolver): void {
+        if (!class_exists($service)) {
+            throw new Exception("Class [$service] does not exist.");
+        }
+
+        // remember the resolver when it gets called
+        $this->registered[$service] = $resolver;
     }
 
     public function resolveClass($class)
